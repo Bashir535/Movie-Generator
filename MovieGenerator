@@ -1,0 +1,70 @@
+import java.util.Scanner;
+
+public class EngProject {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+       
+        String[] actionMoviesAdult = {"The Revenant", "John Wick", "Gladiator 2"};
+        String[] comedyMoviesAdult = {"Hitman", "Jumandi", "Cobra Kai"};
+        String[] horrorMoviesAdult = {"Terrifier", "The Conjuring", "It"};
+
+        String[] actionMoviesUnderage = {"Spider-Man: Into the Spider-Verse", "The Incredibles", "Tron: Legacy"};
+        String[] comedyMoviesUnderage = {"Shrek", "Home Alone", "Ice Age"};
+        String[] horrorMoviesUnderage = {"Scooby Doo", "Coraline", "Monster House"};
+
+        
+        System.out.print("Enter your age: ");
+        int age = scanner.nextInt();
+        scanner.nextLine(); 
+
+        System.out.println("Choose a genre: Action, Comedy, or Horror");
+        String genre = scanner.nextLine().trim().toLowerCase();
+
+        
+        System.out.println("\nRecommended Movies:");
+        if (age > 17) {
+            switch (genre) {
+                case "action":
+                    for (String movie : actionMoviesAdult) {
+                        System.out.println("- " + movie);
+                    }
+                    break;
+                case "comedy":
+                    for (String movie : comedyMoviesAdult) {
+                        System.out.println("- " + movie);
+                    }
+                    break;
+                case "horror":
+                    for (String movie : horrorMoviesAdult) {
+                        System.out.println("- " + movie);
+                    }
+                    break;
+                default:
+                    System.out.println("Invalid Choice. Please choose Action, Comedy, or Horror.");
+            }
+        } else {
+            switch (genre) {
+                case "action":
+                    for (String movie : actionMoviesUnderage) {
+                        System.out.println("- " + movie);
+                    }
+                    break;
+                case "comedy":
+                    for (String movie : comedyMoviesUnderage) {
+                        System.out.println("- " + movie);
+                    }
+                    break;
+                case "horror":
+                    for (String movie : horrorMoviesUnderage) {
+                        System.out.println("- " + movie);
+                    }
+                    break;
+                default:
+                    System.out.println("Invalid Choice. Please choose Action, Comedy, or Horror.");
+            }
+        }
+
+        scanner.close();
+    }
+}
